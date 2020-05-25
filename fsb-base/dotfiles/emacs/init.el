@@ -20,6 +20,7 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (setq make-backup-files nil)
+(setq inhibit-startup-screen t)
 
 ;; * Evil-mode and keybindings
 (use-package evil :ensure t
@@ -48,8 +49,10 @@
    "gb" 'magit-branch))
 
 ;; * Counsel and Ivy
-(use-package counsel :ensure t)
+(use-package counsel :ensure t
+  :diminish "cl")
 (use-package ivy :ensure t
+  :diminish "iv"
   :config
   (ivy-mode 1)
   (counsel-mode)
@@ -91,6 +94,7 @@
   :config
   (require 'powerline)
   (powerline-default-theme))
+(use-package diminish :ensure t)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
