@@ -82,6 +82,10 @@
 (use-package gruvbox-theme :ensure t
   :config
   (load-theme 'gruvbox-dark-hard))
+(use-package powerline :ensure t
+  :config
+  (require 'powerline)
+  (powerline-default-theme))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
