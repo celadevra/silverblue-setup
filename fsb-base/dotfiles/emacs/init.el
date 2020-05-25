@@ -30,7 +30,9 @@
    :keymaps 'normal
    "ff" 'counsel-find-file
    "fs" 'save-buffer
-   "x"  'counsel-M-x))
+   "x"  'counsel-M-x
+   "bb" 'ivy-switch-buffer
+   "bi" 'ibuffer))
 
 ;; * Git
 (use-package magit :ensure t
@@ -49,7 +51,33 @@
   (general-def
     '(normal visual insert replace)
     'global
-    "C-s" 'swiper))
+    "C-s" 'swiper)
+  (my-leader-def
+    :keymaps 'normal
+    "hf" 'counsel-describe-function
+    "hv" 'counsel-describe-variable
+    "hi" 'counsel-info-lookup-symbol))
+
+;; * Parentheses
+(use-package smartparens :ensure t
+  :config
+  (require 'smartparens-config)
+  (smartparens-global-mode t)
+  (add-hook 'prog-mode-hook #'smartparens-strict-mode))
+(use-package evil-smartparens :ensure t
+  :config
+  (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode))
+(use-package rainbow-delimiters :ensure t)
+
+;; * Company
+(use-package company :ensure t
+  :config
+  (add-hook 'after-init-hook 'global-company-mode)
+  (general-def
+    '(insert replace)
+    'global
+    "C-x C-n" 'company-complete))
+
 ;; * Theme
 (use-package gruvbox-theme :ensure t
   :config
