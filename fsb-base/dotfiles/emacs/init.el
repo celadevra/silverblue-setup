@@ -20,7 +20,22 @@
 (use-package evil :ensure t
   :config
   (evil-mode))
-(use-package general :ensure t)
+(use-package general :ensure t
+  :config
+  (general-create-definer my-leader-def
+    :prefix "SPC")
+  (general-create-definer my-local-leader-def
+    :prefix "SPC m")
+  (my-leader-def
+   :keymaps 'normal
+   "ff" 'find-file
+   "fs" 'save-buffer
+   "x"  'counsel-M-x))
 
 ;; * Git
-(use-package magit :ensure t)
+(use-package magit :ensure t
+  :config
+  (my-leader-def
+   :keymaps 'normal
+   "gg" 'magit-status
+   "gb" 'magit-branch))

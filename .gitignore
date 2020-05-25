@@ -6,3 +6,5 @@ fsb-ss/gui-config.json
 fsb-ss/ssr-config.json
 /fsb-base/dotfiles/emacs/straight/
 /fsb-base/dotfiles/emacs/auto-save-list/
+/fsb-base/dotfiles/emacs/transient/
+/fsb-base/dotfiles/emacs/url/
