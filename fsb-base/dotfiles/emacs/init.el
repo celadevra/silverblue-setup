@@ -16,6 +16,11 @@
 (straight-use-package 'use-package)
 (setq straight-use-package-by-default t)
 
+;; * Defaults
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(setq make-backup-files nil)
+
 ;; * Evil-mode and keybindings
 (use-package evil :ensure t
   :config
