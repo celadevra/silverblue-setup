@@ -1,3 +1,5 @@
+;; * Bootstraping Package system
+(server-start)
 (defvar bootstrap-version)
 (let ((bootstrap-file
        (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
@@ -11,4 +13,14 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
+(straight-use-package 'use-package)
 (setq straight-use-package-by-default t)
+
+;; * Evil-mode and keybindings
+(use-package evil :ensure t
+  :config
+  (evil-mode))
+(use-package general :ensure t)
+
+;; * Git
+(use-package magit :ensure t)
