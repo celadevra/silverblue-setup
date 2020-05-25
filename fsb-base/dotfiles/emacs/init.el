@@ -28,7 +28,7 @@
     :prefix "SPC m")
   (my-leader-def
    :keymaps 'normal
-   "ff" 'find-file
+   "ff" 'counsel-find-file
    "fs" 'save-buffer
    "x"  'counsel-M-x))
 
@@ -40,6 +40,16 @@
    "gg" 'magit-status
    "gb" 'magit-branch))
 
+;; * Counsel and Ivy
+(use-package counsel :ensure t)
+(use-package ivy :ensure t
+  :config
+  (ivy-mode 1)
+  (counsel-mode)
+  (general-def
+    '(normal visual insert replace)
+    'global
+    "C-s" 'swiper))
 ;; * Theme
 (use-package gruvbox-theme :ensure t
   :config
