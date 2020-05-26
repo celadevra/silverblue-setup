@@ -114,7 +114,7 @@
 (use-package powerline :ensure t
   :config
   (require 'powerline)
-  (powerline-vim-theme))
+  (powerline-center-evil-theme))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
