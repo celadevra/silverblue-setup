@@ -49,6 +49,9 @@
   "x"  'counsel-M-x
   "b" '(:ignore t :which-key "buffer")
   "bb" 'ivy-switch-buffer
+  "bd" 'evil-delete-buffer
+  "bp" 'evil-prev-buffer
+  "bn" 'evil-next-buffer
   "bi" 'ibuffer)
 
 ;; * Git
