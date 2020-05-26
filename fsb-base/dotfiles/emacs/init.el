@@ -72,6 +72,8 @@
     'global
     "C-s" 'swiper)
   (my-leader-def
+    "h"  '(:ignore t :which-key "help")
+    "ha" 'counsel-apropos
     "hf" 'counsel-describe-function
     "hv" 'counsel-describe-variable
     "hi" 'counsel-info-lookup-symbol))
