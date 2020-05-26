@@ -37,7 +37,7 @@
   (general-override-mode)
   (general-auto-unbind-keys))
 (general-create-definer my-leader-def
-  :states '(normal insert visual)
+  :states '(normal insert visual hybrid replace emacs)
   :prefix "SPC"
   :non-normal-prefix "C-c SPC")
 (general-create-definer my-local-leader-def
@@ -105,6 +105,7 @@
   (projectile-mode +1)
   (my-leader-def
     "P" '(:keymap projectile-command-map :which-key "projectile")))
+(setq projectile-completion-system 'ivy)
 
 ;; * Theme
 (use-package gruvbox-theme :ensure t
