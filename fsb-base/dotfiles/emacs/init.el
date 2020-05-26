@@ -22,31 +22,42 @@
 (setq make-backup-files nil)
 (setq inhibit-startup-screen t)
 
+(use-package diminish :ensure t)
+
 ;; * Evil-mode and keybindings
 (use-package evil :ensure t
   :config
   (evil-mode))
+(use-package which-key :ensure t
+  :config
+  (which-key-mode)
+  (setq which-key-enable-extended-define-key t))
 (use-package general :ensure t
   :config
-  (general-create-definer my-leader-def
-    :prefix "SPC")
-  (general-create-definer my-local-leader-def
-    :prefix "SPC m")
-  (my-leader-def
-   :keymaps 'normal
-   "ff" 'counsel-find-file
-   "fs" 'save-buffer
-   "x"  'counsel-M-x
-   "bb" 'ivy-switch-buffer
-   "bi" 'ibuffer))
+  (general-override-mode)
+  (general-auto-unbind-keys))
+(general-create-definer my-leader-def
+  :states '(normal insert visual)
+  :prefix "SPC"
+  :non-normal-prefix "C-c SPC")
+(general-create-definer my-local-leader-def
+  :prefix "SPC m")
+(my-leader-def
+  "f" '(:ignore t :which-key "file")
+  "ff" 'counsel-find-file
+  "fs" 'save-buffer
+  "x"  'counsel-M-x
+  "b" '(:ignore t :which-key "buffer")
+  "bb" 'ivy-switch-buffer
+  "bi" 'ibuffer)
 
 ;; * Git
 (use-package magit :ensure t
   :config
   (my-leader-def
-   :keymaps 'normal
-   "gg" 'magit-status
-   "gb" 'magit-branch))
+    "g" '(:ignore t :which-key "git")
+    "gg" 'magit-status
+    "gb" 'magit-branch))
 
 ;; * Counsel and Ivy
 (use-package counsel :ensure t
@@ -61,7 +72,6 @@
     'global
     "C-s" 'swiper)
   (my-leader-def
-    :keymaps 'normal
     "hf" 'counsel-describe-function
     "hv" 'counsel-describe-variable
     "hi" 'counsel-info-lookup-symbol))
@@ -86,6 +96,14 @@
     'global
     "C-x C-n" 'company-complete))
 
+;; * Projectile
+(use-package projectile :ensure t
+  :diminish
+  :config
+  (projectile-mode +1)
+  (my-leader-def
+    "P" '(:keymap projectile-command-map :which-key "projectile")))
+
 ;; * Theme
 (use-package gruvbox-theme :ensure t
   :config
@@ -93,8 +111,7 @@
 (use-package powerline :ensure t
   :config
   (require 'powerline)
-  (powerline-default-theme))
-(use-package diminish :ensure t)
+  (powerline-vim-theme))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
