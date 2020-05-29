@@ -19,6 +19,7 @@
 ;; * Defaults
 (menu-bar-mode -1)
 (tool-bar-mode -1)
+(set-language-environment 'utf-8)
 (setq make-backup-files nil)
 (setq inhibit-startup-screen t)
 
