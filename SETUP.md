@@ -76,6 +76,33 @@ flatpak install org.mozilla.firefox
 rpm-ostree override remove firefox
 ```
 
+## Credentials
+
+Mainly GPG keys and some login credentials. Stored on my SDF machine.
+
+```sh
+export LOGIN_NAME=(redacted)
+ssh $LOGIN_NAME@meta.sdf.org creds/packing.sh
+scp $LOGIN_NAME@meta.sdf.org:/sdf/arpa/af/${LOGIN_NAME:0:1}/$LOGIN_NAME/creds_pack.zip .
+ssh $LOGIN_NAME@meta.sdf.org rm /sdf/arpa/af/${LOGIN_NAME:0:1}/$LOGIN_NAME/creds_pack.zip
+unzip creds_pack.zip
+cd creds
+./unpacking.sh
+```
+
+Generate ssh keys and send them to github/lab as valid credentials.
+
+```sh
+ssh-keygen -C xhy@FedoraMBP -f ~/.ssh/id_rsa_github
+ssh-keygen -C xhy@FedoraMBP -f ~/.ssh/id_rsa_gitlab
+```
+
+Edit the GPG keys to trust them. Then clone the password store:
+
+```sh
+git clone 
+```
+
 ## Ricing a bit
 
 Clone [PaperWM](https://github.com/paperwm/PaperWM.git). Run the install script.
