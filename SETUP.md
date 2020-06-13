@@ -43,6 +43,10 @@ local bin dir, and installed privoxy as a layered package.
 sudo rpm-ostree install privoxy
 ```
 
+If you see error "error  junk in handshake", check
+[this](https://github.com/ShadowsocksR-Live/shadowsocksr-native/issues/102)
+out. Basically you need to run privoxy first and use the HTTP proxy.
+
 ## Power Management
 
 Install tlp and tlp-rdw as layered package. Then start the service.
@@ -60,6 +64,7 @@ Go to [Flathub](https://flathub.org/home) and enable the remote:
 
 ```sh
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak update
 ```
 
 ## Install Software
