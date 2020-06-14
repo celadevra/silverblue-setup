@@ -100,7 +100,7 @@ ssh-keygen -C xhy@FedoraMBP -f ~/.ssh/id_rsa_gitlab
 Edit the GPG keys to trust them. Then clone the password store:
 
 ```sh
-git clone 
+git clone git@gitlab.com:celadevra/passwords.git
 ```
 
 ## Ricing a bit
