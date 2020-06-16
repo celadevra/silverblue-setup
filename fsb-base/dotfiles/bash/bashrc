@@ -25,3 +25,4 @@ export EDITOR
 TERM=xterm-256color
 export TERM
 # User specific aliases and functions
+alias e='emacsclient -t'
