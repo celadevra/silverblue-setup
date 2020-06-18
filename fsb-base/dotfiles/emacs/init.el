@@ -116,6 +116,15 @@
 (use-package org :ensure t)
 (require 'xhy-notetaking)
 
+;; * Chinese input using librime
+(use-package rime
+  :straight (rime :type git
+                  :host github
+                  :repo "DogLooksGood/emacs-rime"
+                  :files ("*.el" "Makefile" "lib.c"))
+  :custom
+  (default-input-method "rime"))
+
 ;; * Theme
 (use-package gruvbox-theme :ensure t
   :config
