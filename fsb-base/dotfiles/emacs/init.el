@@ -111,6 +111,10 @@
     "P" '(:keymap projectile-command-map :which-key "projectile")))
 (setq projectile-completion-system 'ivy)
 
+;; * Note-taking system
+(use-package org :ensure t)
+(require 'xhy-notetaking)
+
 ;; * Theme
 (use-package gruvbox-theme :ensure t
   :config
