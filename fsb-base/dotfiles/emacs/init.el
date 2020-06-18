@@ -112,6 +112,7 @@
 (setq projectile-completion-system 'ivy)
 
 ;; * Note-taking system
+(add-to-list 'load-path "~/.emacs.d/site-lisp")
 (use-package org :ensure t)
 (require 'xhy-notetaking)
 
