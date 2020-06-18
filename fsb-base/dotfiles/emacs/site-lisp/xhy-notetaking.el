@@ -70,6 +70,11 @@ unwanted space when exporting org-mode to html."
 (setq org-ref-default-bibliography '("~/Documents/org/references.bib"))
 (setq reftex-default-bibliography '("~/Documents/org/references.bib"))
 
+;; zotxt
+(use-package zotxt :ensure t
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-zotxt-mode 1))))
+
 ;; Helper functions
 (defun xhy/find-org-capture-target ()
   "Find org capture target by user's input.  The user gives a
