@@ -116,6 +116,20 @@
 (use-package org :ensure t)
 (require 'xhy-notetaking)
 
+;; * Fonts
+;; Align Test here.
+;; 中英文对齐之测试
+(if (display-graphic-p)
+    (progn ;; set English font
+      (set-face-attribute 'default nil :font "IBM Plex Mono Text-8")
+      ;; Chinese font
+      (dolist (charset '(kana han cjk-misc bopomofo))
+	(set-fontset-font (frame-parameter nil 'font)
+			  charset (font-spec :family "Noto Sans CJK SC"
+					     :size 8)))
+      (set-fontset-font t 'unicode "Noto Color Emoji" nil 'prepend)
+      (setq face-font-rescale-alist '(("Noto Sans CJK SC" . 1.8)))))
+
 ;; * Theme
 (use-package gruvbox-theme :ensure t
   :config
