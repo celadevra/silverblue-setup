@@ -8,6 +8,7 @@
 	 ((alltodo "" nil))
 	 nil)
 	("b" "Backlog TODOs" todo "BACKLOG" nil)))
+(setq org-agenda-span 'day) ; show daily agenda by default
 (setq org-refile-targets '((org-agenda-files . (:maxlevel . 3))))
 (add-to-list 'org-modules 'org-id)
 (setq org-capture-templates
@@ -74,7 +75,8 @@ unwanted space when exporting org-mode to html."
 (use-package zotxt :ensure t
   :config
   (add-hook 'org-mode-hook (lambda () (org-zotxt-mode 1))))
-
+(eval-after-load "zotxt"
+'(setq zotxt-default-bibliography-style "chicago-author-date"))
 ;; Helper functions
 (defun xhy/find-org-capture-target ()
   "Find org capture target by user's input.  The user gives a
