@@ -74,6 +74,7 @@ Firefox that comes with ostree cannot play mp4 video embeded in web pages for la
 ```sh
 flatpak install org.mozilla.firefox
 rpm-ostree override remove firefox
+flatpak install org.blender.Blender org.shotcut.Shotcut
 ```
 
 ## Credentials
