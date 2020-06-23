@@ -25,6 +25,11 @@
 
 (use-package diminish :ensure t)
 
+(setq browse-url-browser-function 'browse-url-firefox)
+(setq browse-url-firefox-program "flatpak-spawn"
+      browse-url-firefox-arguments '("--host" "flatpak" "run"
+      "org.mozilla.firefox"))
+
 ;; * Evil-mode and keybindings
 (use-package evil :ensure t
   :config
