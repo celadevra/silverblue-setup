@@ -1,3 +1,3 @@
 #!/usr/bin/bash
-kill $(pgrep ssr-client)
+#kill $(pgrep ssr-client)
 sudo kill $(pgrep privoxy)
