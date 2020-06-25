@@ -30,3 +30,9 @@ TERM=xterm-256color
 export TERM
 # User specific aliases and functions
 alias e='emacsclient'
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/var/home/xhy/Downloads/google-cloud-sdk-298.0.0-linux-x86_64/google-cloud-sdk/path.bash.inc' ]; then . '/var/home/xhy/Downloads/google-cloud-sdk-298.0.0-linux-x86_64/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/var/home/xhy/Downloads/google-cloud-sdk-298.0.0-linux-x86_64/google-cloud-sdk/completion.bash.inc' ]; then . '/var/home/xhy/Downloads/google-cloud-sdk-298.0.0-linux-x86_64/google-cloud-sdk/completion.bash.inc'; fi
