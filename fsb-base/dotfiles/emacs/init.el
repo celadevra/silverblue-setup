@@ -121,6 +121,10 @@
 (use-package org :ensure t)
 (require 'xhy-notetaking)
 
+;; * Website managing
+(use-package markdown-mode :ensure t)
+(use-package deft :ensure t)
+(require 'expoundite)
 ;; * Fonts
 ;; Align Test here.
 ;; 中英文对齐之测试
