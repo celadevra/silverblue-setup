@@ -11,13 +11,21 @@
 (setq org-agenda-span 'day) ; show daily agenda by default
 (setq org-refile-targets '((org-agenda-files . (:maxlevel . 3))))
 (add-to-list 'org-modules 'org-id)
+(add-to-list 'org-modules 'org-habit)
 (setq org-capture-templates
       '(("h" "Zettel" entry (function xhy/find-org-capture-target)
 	 "* %^{Todo|NOTE|TODAY|BACKLOG|MARK} %? %^G\nSCHEDULED: %t\n\n" :time-prompt t)
 	("t" "Derived Zettel" entry (function xhy/find-org-capture-target)
 	 "* %^{Todo|NOTE|TODAY|BACKLOG|MARK} %? %^G\nSCHEDULED: %t\n\n  Related: %a" :time-prompt t)
 	("n" "Duplicate to" entry (function xhy/find-org-capture-target)
-	 "%(xhy/get-current-heading-content)" :time-prompt t)))
+	 "%(xhy/get-current-heading-content)" :time-prompt t)
+	("m" "Microblogging" plain (function
+				    (lambda () (find-file 
+						(concat
+						 "~/Documents/expoundite.net/toot/"
+						 (org-id-uuid)
+						 ".mdwn"))))
+	 "%k\n\n[[!tag %?]]")))
 (setq org-id-link-to-org-use-id t) ; use id as link target by default
 
 (add-hook 'org-mode-hook 'auto-fill-mode)
