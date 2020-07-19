@@ -1,7 +1,7 @@
 ;;; xhy-notetaking.el: settings for taking notes with Org-mode
 
 ;; org-mode customization
-(setq org-agenda-files '("~/Documents/org/"))
+(setq org-agenda-files '("~/Documents/org"))
 (setq org-agenda-start-on-weekday nil) ; show agenda for next 7 days
 (setq org-agenda-custom-commands
       '(("n" "Agenda and all TODOs"
