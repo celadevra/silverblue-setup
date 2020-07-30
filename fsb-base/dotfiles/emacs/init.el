@@ -125,6 +125,12 @@
 (use-package markdown-mode :ensure t)
 (use-package deft :ensure t)
 (require 'expoundite)
+
+;; * Racket programming
+(use-package racket-mode :ensure t)
+(use-package scribble-mode :ensure t)
+(require 'xhy-racket)
+
 ;; * Fonts
 ;; Align Test here.
 ;; 中英文对齐之测试
