@@ -140,10 +140,10 @@
       ;; Chinese font
       (dolist (charset '(kana han cjk-misc bopomofo))
 	(set-fontset-font (frame-parameter nil 'font)
-			  charset (font-spec :family "Noto Sans CJK SC"
+			  charset (font-spec :family "Noto Sans SC"
 					     :size 10)))
       (set-fontset-font t 'unicode "Symbola" nil 'prepend)
-      (setq face-font-rescale-alist '(("Noto Sans CJK SC" . 1.8)))))
+      (setq face-font-rescale-alist '(("Noto Sans SC" . 1.6)))))
 
 ;; * Theme
 (use-package gruvbox-theme :ensure t
