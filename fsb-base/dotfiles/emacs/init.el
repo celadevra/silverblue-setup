@@ -136,19 +136,19 @@
 ;; 中英文对齐之测试
 (if (display-graphic-p)
     (progn ;; set English font
-      (set-face-attribute 'default nil :font "IBM Plex Mono Text-8")
+      (set-face-attribute 'default nil :font "IBM Plex Mono Text-10")
       ;; Chinese font
       (dolist (charset '(kana han cjk-misc bopomofo))
 	(set-fontset-font (frame-parameter nil 'font)
 			  charset (font-spec :family "Noto Sans CJK SC"
-					     :size 8)))
+					     :size 10)))
       (set-fontset-font t 'unicode "Symbola" nil 'prepend)
       (setq face-font-rescale-alist '(("Noto Sans CJK SC" . 1.8)))))
 
 ;; * Theme
 (use-package gruvbox-theme :ensure t
   :config
-  (load-theme 'gruvbox-dark-hard))
+  (load-theme 'gruvbox-light-hard))
 (use-package powerline :ensure t
   :config
   (require 'powerline)
@@ -160,11 +160,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   (quote
-    ("4cf9ed30ea575fb0ca3cff6ef34b1b87192965245776afa9e9e20c17d115f3fb" default)))
+   '("a06658a45f043cd95549d6845454ad1c1d6e24a99271676ae56157619952394a" "4cf9ed30ea575fb0ca3cff6ef34b1b87192965245776afa9e9e20c17d115f3fb" default))
  '(org-agenda-files
-   (quote
-    ("/var/home/xhy/Documents/org/2020-07.org" "/var/home/xhy/Documents/org/2013-10.org" "/var/home/xhy/Documents/org/2016-03.org" "/var/home/xhy/Documents/org/2016-04.org" "/var/home/xhy/Documents/org/2018-06.org" "/var/home/xhy/Documents/org/2018-07.org" "/var/home/xhy/Documents/org/2018-08.org" "/var/home/xhy/Documents/org/2018-10.org" "/var/home/xhy/Documents/org/2018-11.org" "/var/home/xhy/Documents/org/2019-04.org" "/var/home/xhy/Documents/org/2019-05.org" "/var/home/xhy/Documents/org/2019-06.org" "/var/home/xhy/Documents/org/2019-07.org" "/var/home/xhy/Documents/org/2019-08.org" "/var/home/xhy/Documents/org/2019-09.org" "/var/home/xhy/Documents/org/2019-12.org" "/var/home/xhy/Documents/org/2020-01.org" "/var/home/xhy/Documents/org/2020-02.org" "/var/home/xhy/Documents/org/2020-03.org" "/var/home/xhy/Documents/org/2020-04.org" "/var/home/xhy/Documents/org/2020-05.org" "/var/home/xhy/Documents/org/2020-06.org"))))
+   '("/var/home/xhy/Documents/org/2020-07.org" "/var/home/xhy/Documents/org/2013-10.org" "/var/home/xhy/Documents/org/2016-03.org" "/var/home/xhy/Documents/org/2016-04.org" "/var/home/xhy/Documents/org/2018-06.org" "/var/home/xhy/Documents/org/2018-07.org" "/var/home/xhy/Documents/org/2018-08.org" "/var/home/xhy/Documents/org/2018-10.org" "/var/home/xhy/Documents/org/2018-11.org" "/var/home/xhy/Documents/org/2019-04.org" "/var/home/xhy/Documents/org/2019-05.org" "/var/home/xhy/Documents/org/2019-06.org" "/var/home/xhy/Documents/org/2019-07.org" "/var/home/xhy/Documents/org/2019-08.org" "/var/home/xhy/Documents/org/2019-09.org" "/var/home/xhy/Documents/org/2019-12.org" "/var/home/xhy/Documents/org/2020-01.org" "/var/home/xhy/Documents/org/2020-02.org" "/var/home/xhy/Documents/org/2020-03.org" "/var/home/xhy/Documents/org/2020-04.org" "/var/home/xhy/Documents/org/2020-05.org" "/var/home/xhy/Documents/org/2020-06.org")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
